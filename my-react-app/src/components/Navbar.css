@@ -1,0 +1,138 @@
+/* Navbar container */
+.navbar {
+    background-color: #0a192f; /* Dark blue background */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1500px;
+    padding: 0 20px;
+  }
+  
+  /* Menu items */
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: rgba(10, 25, 47, 0.8); /* Transparent dark blue box */
+    border-radius: 30px;
+    padding: 0 20px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .nav-item {
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Hover effect with blue accent */
+  .nav-links:hover {
+    color: #64ffda; /* Teal accent color */
+  }
+  
+  .nav-links::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #0077b6; /* Blue accent color */
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links:hover::after {
+    width: 50%;
+  }
+  
+  /* Mobile menu icon */
+  .menu-icon {
+    display: none;
+  }
+  
+  .bars-icon {
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  .bars-icon:hover {
+    color: #64ffda;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 960px) {
+    .nav-menu {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 80px);
+      flex-direction: column;
+      background: #0a192f;
+      border-radius: 0;
+      padding: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      backdrop-filter: none;
+    }
+  
+    .nav-menu.active {
+      left: 0;
+    }
+  
+    .nav-item {
+      width: 100%;
+      height: 80px;
+      justify-content: center;
+    }
+  
+    .nav-links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    .nav-links:hover {
+      background-color: #112240;
+      color: #64ffda;
+      border-radius: 0;
+    }
+  
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      cursor: pointer;
+    }
+  }
